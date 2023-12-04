@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script>
+        function clock() {
+    var fulldate = new Date();
+    var hour = fulldate.getHours();
+    if(hour<10) godzina = "0"+godzina
+    var minute = fulldate.getMinutes();
+    if(minute<10) minute = "0"+minute
+    var second = fulldate.getSeconds();
+    if(second<10) second = "0"+second
+    var day = fulldate.getDate();
+    if(day<10) day = "0"+day
+    var month = fulldate.getMonth()+1;
+    if(month<10) month = "0"+month
+    var year = fulldate.getFullYear();
+
+    document.getElementById("time").innerHTML = hour+":"+minute+":"+second
+
+    document.getElementById("date").innerHTML = day+"/"+month+"/"+year
+
+
+    setTimeout("clock()",1000)
+}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+ margin:0 px !important;
+        }
+        div {
+text-align: center;
+width: 100%;
+background-color: #080f13;
+border: 2px solid white;
+color:white;
+padding:6px 0;
+font-family: 'Lato', sans-serif;
+        }
+    </style>
+</head>
+<body onload="clock();">
+    <div>
+        <h1 id="time"></h1>
+
+        <h3 id="date"></h3>
+    </div>
+</body>
+</html>
